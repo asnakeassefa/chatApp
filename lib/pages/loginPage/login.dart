@@ -50,16 +50,37 @@ class _LoginState extends State<Login> {
                     )
                   ],
                 ),
-
+                const SizedBox(height: 50),
                 //username TextField
+                const Padding(
+                  padding: EdgeInsets.fromLTRB(10,0,0,5),
+                  child: Text(
+                    "Username",
+                    style: TextStyle(
+                      fontFamily: "poppins",
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
                 UserFormField(
                   hintText: "username",
                   obscure: false,
                   controller: userController,
-                  lableText: "password",
+                  lableText: "username",
                 ),
-                //password TextField
 
+                //password TextField
+                const SizedBox(height: 20),
+                const Padding(
+                  padding: EdgeInsets.fromLTRB(10,0,0,5),
+                  child: Text(
+                    "Password",
+                    style: TextStyle(
+                      fontFamily: "poppins",
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
                 UserFormField(
                   hintText: "Password",
                   obscure: true,
