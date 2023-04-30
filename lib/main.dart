@@ -1,3 +1,4 @@
+import 'package:chat/pages/loginPage/login.dart';
 import 'package:chat/pages/splashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:chat/common/color.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light().copyWith(
         primaryColor:Lcolor.mainColor,
       ),
-      home:const Splash(),
+      home:const Login(),
     );
   }
 }

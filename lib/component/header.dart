@@ -16,7 +16,7 @@ class Header extends StatelessWidget {
               style: TextStyle(
                 fontSize: 39,
                 fontWeight: FontWeight.w600,
-                // fontFamily: poppins,
+                fontFamily: "poppins",
               ),
             ),
           ),
@@ -24,7 +24,10 @@ class Header extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(20, 0, 120, 0),
             child: const Text(
               "Help you to connect everyone with just easy way",
-              style: TextStyle(fontSize: 17),
+              style: TextStyle(
+                fontSize: 17,
+                fontFamily: "poppins",
+              ),
             ),
           )
         ],
