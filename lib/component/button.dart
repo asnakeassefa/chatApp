@@ -4,12 +4,12 @@ class Button extends StatelessWidget {
   final todo;
   final String child;
   const Button({super.key, required this.todo,required this.child});
-
+ 
   @override
   Widget build(BuildContext context) {
+     double screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
-      alignment: const Alignment(0, 0.9),
+      padding: const EdgeInsets.fromLTRB(0, 0, 20, 20),
       child: ElevatedButton(
         onPressed: todo,
         style: ButtonStyle(
@@ -19,8 +19,8 @@ class Button extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
           ),
-          minimumSize: const MaterialStatePropertyAll(
-            Size(350, 50),
+          minimumSize: MaterialStatePropertyAll(
+            Size(screenWidth, 50),
           ),
         ),
         child: Text(child),

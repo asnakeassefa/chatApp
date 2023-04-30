@@ -13,12 +13,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final theme = ThemeData(
+      fontFamily: "poppins",
+      buttonColor: Colors.deepPurpleAccent,
+      primaryColor: Colors.black54,
+    );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData.light().copyWith(
-        primaryColor:Lcolor.mainColor,
-      ),
+      theme: theme,
       home:const Login(),
     );
   }
