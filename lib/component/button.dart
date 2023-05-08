@@ -8,23 +8,20 @@ class Button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      double screenWidth = MediaQuery.of(context).size.width;
-    return Container(
-      padding: const EdgeInsets.fromLTRB(0, 0, 20, 20),
-      child: ElevatedButton(
-        onPressed: todo,
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-          ),
-          minimumSize: MaterialStatePropertyAll(
-            Size(screenWidth, 50),
+    return ElevatedButton(
+      onPressed: todo,
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
           ),
         ),
-        child: Text(child),
+        minimumSize: MaterialStatePropertyAll(
+          Size(screenWidth, 50),
+        ),
       ),
+      child: Text(child),
     );
   }
 }

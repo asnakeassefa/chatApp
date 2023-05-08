@@ -27,54 +27,58 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Header(),
-            const SizedBox(height: 2),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    child: PageView(
-                      controller: _controller,
-                      children: const [
-                        cards(
-                          color: Colors.white10,
-                          child: "assets/images/splash.png",
-                        ),
-                        cards(
-                          color: Colors.white10,
-                          child: "assets/images/chatters.jpg",
-                        ),
-                        cards(
-                          color: Colors.white10,
-                          child: "assets/images/chatters.jpg",
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    // alignment: const Alignment(0, 0.9),
-                    margin: const EdgeInsets.fromLTRB(0, 20, 0, 40),
-                    child: SmoothPageIndicator(
-                      controller: _controller,
-                      count: 3,
-                      effect: const JumpingDotEffect(
-                        activeDotColor: Colors.black45,
-                        dotColor: Colors.black54,
-                        dotHeight: 8,
-                        dotWidth: 8,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Header(),
+              const SizedBox(height: 2),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                      child: PageView(
+                        controller: _controller,
+                        children: const [
+                          cards(
+                            color: Colors.white10,
+                            child: "assets/images/splash.png",
+                          ),
+                          cards(
+                            color: Colors.white10,
+                            child: "assets/images/chatters.jpg",
+                          ),
+                          cards(
+                            color: Colors.white10,
+                            child: "assets/images/chatters.jpg",
+                          ),
+                        ],
                       ),
                     ),
-                  ),
-                  Button(todo: nav, child: "Get Started")
-                ],
-              ),
-            )
-          ],
+                    Container(
+                      // alignment: const Alignment(0, 0.9),
+                      margin: const EdgeInsets.fromLTRB(0, 20, 0, 40),
+                      child: SmoothPageIndicator(
+                        controller: _controller,
+                        count: 3,
+                        effect: const JumpingDotEffect(
+                          activeDotColor: Colors.black45,
+                          dotColor: Colors.black54,
+                          dotHeight: 8,
+                          dotWidth: 8,
+                        ),
+                      ),
+                    ),
+                    Button(todo: nav, child: "Get Started"),
+                    const SizedBox(height: 60),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

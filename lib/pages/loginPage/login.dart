@@ -20,14 +20,15 @@ class _LoginState extends State<Login> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(left: 18),
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
           child: Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: ListView(
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 35),
                 //backbutton
-                const Back(),
+                Row(children: const [Back()]),
+                // Header Text
                 const SizedBox(height: 40), //Text Description
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,7 +100,7 @@ class _LoginState extends State<Login> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: const [
                       Padding(
-                        padding: EdgeInsets.fromLTRB(0, 10, 30, 0),
+                        padding: EdgeInsets.fromLTRB(0, 10, 10, 0),
                         child: Text(
                           "Forget password",
                           style: TextStyle(color: Colors.purple),
@@ -113,35 +114,29 @@ class _LoginState extends State<Login> {
                 Button(todo: () => {}, child: "Login"),
                 const SizedBox(height: 40),
                 // other alternatives
-                Padding(
-                  padding: const EdgeInsets.only(right: 20),
-                  child: Row(
-                    children: const [
-                      Expanded(
-                        child: Divider(
-                          thickness: 0.5,
-                          color: Colors.black45,
-                        ),
+                Row(
+                  children: const [
+                    Expanded(
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.black45,
                       ),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
-                        child: Text('or Login with'),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                      child: Text('or Login with'),
+                    ),
+                    Expanded(
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.black45,
                       ),
-                      Expanded(
-                        child: Divider(
-                          thickness: 0.5,
-                          color: Colors.black45,
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
 
                 const SizedBox(height: 40),
-                const Padding(
-                  padding:EdgeInsets.only(right: 30),
-                  child: LoginAlternatives(),
-                )
+                const LoginAlternatives(),
                 // social
               ],
             ),
