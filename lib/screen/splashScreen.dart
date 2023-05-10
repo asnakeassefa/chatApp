@@ -1,10 +1,10 @@
 import 'package:chat/component/cards.dart';
 import 'package:chat/component/header.dart';
-import 'package:chat/pages/loginPage/login.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../component/button.dart';
+import 'login.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});

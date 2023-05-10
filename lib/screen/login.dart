@@ -1,8 +1,9 @@
 import 'package:chat/component/button.dart';
 import 'package:chat/component/userField.dart';
 import 'package:flutter/material.dart';
-import '../../component/backButton.dart';
-import '../../component/loginAlternative.dart';
+import '../component/backButton.dart';
+import '../component/loginAlternative.dart';
+import 'ChatHome.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -111,7 +112,16 @@ class _LoginState extends State<Login> {
                 ),
                 // Login button
                 const SizedBox(height: 40),
-                Button(todo: () => {}, child: "Login"),
+                Button(
+                    todo: () => {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ChatHome(),
+                            ),
+                          )
+                        },
+                    child: "Login"),
                 const SizedBox(height: 40),
                 // other alternatives
                 Row(
