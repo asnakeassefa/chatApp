@@ -10,21 +10,24 @@ class Header extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: const EdgeInsets.fromLTRB(40, 40, 20, 20),
+            padding: const EdgeInsets.fromLTRB(20, 40,0, 20),
             child: const Text(
               'Geting Closer To EveryOne',
               style: TextStyle(
-                fontSize: 39,
+                fontSize: 34,
                 fontWeight: FontWeight.w600,
-                // fontFamily: poppins,
+                fontFamily: "poppins",
               ),
             ),
           ),
-          Container(
-            padding: const EdgeInsets.fromLTRB(20, 0, 120, 0),
-            child: const Text(
+          const SizedBox(
+            width:400,
+            child: Text(
               "Help you to connect everyone with just easy way",
-              style: TextStyle(fontSize: 17),
+              style: TextStyle(
+                fontSize: 17,
+                fontFamily: "poppins",
+              ),
             ),
           )
         ],
