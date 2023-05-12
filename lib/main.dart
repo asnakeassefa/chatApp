@@ -14,15 +14,28 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final theme = ThemeData(
+
+    bool screenTheme = true;
+
+    final darkTheme = ThemeData(
       fontFamily: "poppins",
-      buttonColor: Colors.deepPurpleAccent,
-      primaryColor: Colors.black54,
+      primaryColor: Colors.white,
+      primarySwatch:Colors.grey,
+      brightness: Brightness.dark
+    );
+
+    final lightTheme = ThemeData(
+      fontFamily: "poppins",
+      primaryColor: Colors.black,
+      // secondaryHeaderColor: Colors.black45,
+      // Secondary:Colors.black45,
+      primarySwatch: Colors.grey,
+      brightness: Brightness.light
     );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: theme,
+      theme: screenTheme? darkTheme : lightTheme,
       home:const Splash(),
     );
   }

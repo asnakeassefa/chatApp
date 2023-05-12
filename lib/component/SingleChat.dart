@@ -41,15 +41,15 @@ class _SingleChatState extends State<SingleChat> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: const [
-                  Text(
+                children: [
+                  const Text(
                     'Jack',
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
                   ),
                   Text(
                     'Hello, there how are you?',
                     style: TextStyle(
-                        color: Colors.black38,
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 12,
                         fontWeight: FontWeight.w500),
                   ),
@@ -71,7 +71,7 @@ class _SingleChatState extends State<SingleChat> {
                 width: 20,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.purple,
+                  color: Colors.deepPurple,
                 ),
                 child: const Center(
                   child: Text(

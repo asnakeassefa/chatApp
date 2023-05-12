@@ -12,16 +12,16 @@ class UserFormField extends StatelessWidget {
     return TextField(
       controller: controller,
       obscureText: obscure,
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
         // labelText: lableText,
         // hintText:hintText,
         enabledBorder: OutlineInputBorder(
-           borderRadius:BorderRadius.all(Radius.circular(15)),
-          borderSide: BorderSide(color: Colors.black38)
+           borderRadius:const BorderRadius.all(Radius.circular(15)),
+           borderSide: BorderSide(color: Theme.of(context).colorScheme.primary)
         ),
         focusedBorder:OutlineInputBorder(
-          borderRadius:BorderRadius.all(Radius.circular(25)),
-          borderSide: BorderSide(color: Colors.black54)
+          borderRadius:const BorderRadius.all(Radius.circular(15)),
+          borderSide: BorderSide(color:Theme.of(context).colorScheme.primary)
         )
       ),
     );
