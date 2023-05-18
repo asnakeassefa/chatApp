@@ -1,4 +1,5 @@
 import 'package:chat/component/backButton.dart';
+import 'package:chat/component/searchBar.dart';
 import 'package:chat/component/userField.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,7 @@ class _ChatHomeState extends State<ChatHome> {
   //   _tabController = TabController(vsync: this ,length: 3);
   // }
 
+    final searchcontroller = TextEditingController();
 //    @override
 //  void dispose() {
 //    _tabController.dispose();
@@ -27,7 +29,7 @@ class _ChatHomeState extends State<ChatHome> {
 
   @override
   Widget build(BuildContext context) {
-    return const DefaultTabController(
+    return DefaultTabController(
       length: 3,
       child: Scaffold(
         body: SafeArea(
@@ -36,22 +38,24 @@ class _ChatHomeState extends State<ChatHome> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                UserFormField(hintText: "Search here", obscure: false, lableText: "Search"),
+                Searching(
+                  controller: searchcontroller,
+                ),
                 // SizedBox(height: 10),
-                TabBar(
+                const TabBar  (
                   tabs: [
                     Tab(
                       child: Text('chats'),
                     ),
                     Tab(
-                      child: Text('chats'),
+                      child: Text('Friends'),
                     ),
                     Tab(
-                      child: Text('chats'),
+                      child: Text('calls'),
                     )
                   ],
                 ),
-                Expanded(
+                const Expanded(
                     child: TabBarView(
                   children: [
                     Text("chats"),
