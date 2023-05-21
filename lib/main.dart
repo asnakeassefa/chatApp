@@ -19,23 +19,23 @@ class MyApp extends StatelessWidget {
 
     final darkTheme = ThemeData(
       fontFamily: "poppins",
-      primaryColor: Colors.white,
-      primarySwatch:Colors.grey,
+      primaryColor: Colors.black,
+      primarySwatch:Colors.yellow,
       brightness: Brightness.dark
     );
 
     final lightTheme = ThemeData(
       fontFamily: "poppins",
-      primaryColor: Colors.black,
+      primaryColor: Colors.white,
       // secondaryHeaderColor: Colors.black45,
       // Secondary:Colors.black45,
-      primarySwatch: Colors.grey,
+      primarySwatch: Colors.purple,
       brightness: Brightness.light
     );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: screenTheme? darkTheme : lightTheme,
+      theme: !screenTheme? darkTheme : lightTheme,
       home:const Splash(),
     );
   }
