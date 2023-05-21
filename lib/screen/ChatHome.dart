@@ -1,4 +1,5 @@
 import 'package:chat/component/backButton.dart';
+import 'package:chat/component/chatMessage.dart';
 import 'package:chat/component/searchBar.dart';
 import 'package:chat/component/userField.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class _ChatHomeState extends State<ChatHome> {
   //   _tabController = TabController(vsync: this ,length: 3);
   // }
 
-    final searchcontroller = TextEditingController();
+  final searchcontroller = TextEditingController();
 //    @override
 //  void dispose() {
 //    _tabController.dispose();
@@ -42,7 +43,7 @@ class _ChatHomeState extends State<ChatHome> {
                   controller: searchcontroller,
                 ),
                 // SizedBox(height: 10),
-                const TabBar  (
+                const TabBar(
                   tabs: [
                     Tab(
                       child: Text('chats'),
@@ -55,10 +56,17 @@ class _ChatHomeState extends State<ChatHome> {
                     )
                   ],
                 ),
-                const Expanded(
+                Expanded(
                     child: TabBarView(
                   children: [
-                    Text("chats"),
+                    ListView(
+                      children: const [
+                        SizedBox(height: 20,),
+                        Message(message: "hello my friend hello my friend hello my friend hello my friend hello my friend hello my friend",otherChat: false),
+                        SizedBox(height: 20,),
+                        Message(message: "hello my friend hello my friend hello my friend hello my friend hello my friend hello my friend",otherChat: true),
+                      ],
+                    ),
                     Text('Friends'),
                     Text('calls'),
                   ],
