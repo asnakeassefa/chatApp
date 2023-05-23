@@ -15,12 +15,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    bool screenTheme = true;
-
     final darkTheme = ThemeData(
       fontFamily: "poppins",
-      primaryColor: Colors.black,
-      primarySwatch:Colors.yellow,
+      colorScheme: const ColorScheme.dark(
+        background: Colors.black54,
+        primary: Colors.white,
+        secondary: Colors.grey,
+      ),
       brightness: Brightness.dark
     );
 
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: !screenTheme? darkTheme : lightTheme,
+      theme: lightTheme,
+      darkTheme:darkTheme,
       home:const Splash(),
     );
   }

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class Searching extends StatefulWidget {
   final controller;
-  const Searching({super.key, required this.controller});
-
+  final displayFun;
+  const Searching({super.key, required this.controller, required this.displayFun});
+  
   @override
   State<Searching> createState() => _SearchingState();
 }
@@ -17,6 +18,7 @@ class _SearchingState extends State<Searching> {
       child: Center(
         child: TextField(
           controller: widget.controller,
+          onChanged:widget.displayFun,
           decoration: InputDecoration(
               // labelText: lableText,
               prefixIcon: const Icon(Icons.search),

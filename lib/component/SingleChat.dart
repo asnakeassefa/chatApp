@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SingleChat extends StatefulWidget {
-  const SingleChat({super.key});
+  final String name;
+  const SingleChat({super.key,required this.name});
 
   @override
   State<SingleChat> createState() => _SingleChatState();
@@ -42,9 +43,8 @@ class _SingleChatState extends State<SingleChat> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  const Text(
-                    'Jack',
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                  Text(widget.name,
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600)
                   ),
                   Text(
                     'Hello, there how are you?',

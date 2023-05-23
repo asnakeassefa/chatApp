@@ -1,3 +1,4 @@
+import 'package:chat/common/userModel.dart';
 import 'package:chat/component/backButton.dart';
 import 'package:chat/component/chatMessage.dart';
 import 'package:chat/component/searchBar.dart';
@@ -14,22 +15,31 @@ class ChatHome extends StatefulWidget {
 }
 
 class _ChatHomeState extends State<ChatHome> {
-  // late TabController _tabController;
-  // @override
-  // void initState(){
-  //   super.initState();
-  //   _tabController = TabController(vsync: this ,length: 3);
-  // }
-
   final searchcontroller = TextEditingController();
-//    @override
-//  void dispose() {
-//    _tabController.dispose();
-//    super.dispose();
-//  }
-
+    static List users = [
+      "Ashe",
+      "Ase",
+      "Dani",
+      "Bisrat",
+      "Dave",
+    ];
+  
+    List displayList = List.from(users);
   @override
   Widget build(BuildContext context) {
+
+    void newList(String value) {
+      print(value);
+      setState(
+        () {
+          displayList = users
+              .where((element) =>
+                  element.toLowerCase().contains(value.toLowerCase()))
+              .toList();
+        },
+      );
+    }
+
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -40,6 +50,7 @@ class _ChatHomeState extends State<ChatHome> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Searching(
+                  displayFun: newList,
                   controller: searchcontroller,
                 ),
                 // SizedBox(height: 10),
@@ -59,13 +70,11 @@ class _ChatHomeState extends State<ChatHome> {
                 Expanded(
                     child: TabBarView(
                   children: [
-                    ListView(
-                      children: const [
-                        SizedBox(height: 20,),
-                        Message(message: "hello my friend hello my friend hello my friend hello my friend hello my friend hello my friend",otherChat: false),
-                        SizedBox(height: 20,),
-                        Message(message: "hello my friend hello my friend hello my friend hello my friend hello my friend hello my friend",otherChat: true),
-                      ],
+                    ListView.builder(
+                      itemCount: displayList.length,
+                      itemBuilder: (context, index) {
+                        return SingleChat(name: displayList.elementAt(index));
+                      },
                     ),
                     Text('Friends'),
                     Text('calls'),
