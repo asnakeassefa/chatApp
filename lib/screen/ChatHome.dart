@@ -3,6 +3,7 @@ import 'package:chat/component/backButton.dart';
 import 'package:chat/component/chatMessage.dart';
 import 'package:chat/component/searchBar.dart';
 import 'package:chat/component/userField.dart';
+import 'package:chat/screen/chatScreen.dart';
 import 'package:flutter/material.dart';
 
 import '../component/SingleChat.dart';
@@ -16,18 +17,17 @@ class ChatHome extends StatefulWidget {
 
 class _ChatHomeState extends State<ChatHome> {
   final searchcontroller = TextEditingController();
-    static List users = [
-      "Ashe",
-      "Ase",
-      "Dani",
-      "Bisrat",
-      "Dave",
-    ];
-  
-    List displayList = List.from(users);
+  static List users = [
+    "Ashe",
+    "Ase",
+    "Dani",
+    "Bisrat",
+    "Dave",
+  ];
+
+  List displayList = List.from(users);
   @override
   Widget build(BuildContext context) {
-
     void newList(String value) {
       print(value);
       setState(
@@ -45,7 +45,7 @@ class _ChatHomeState extends State<ChatHome> {
       child: Scaffold(
         body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
+            padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -73,11 +73,30 @@ class _ChatHomeState extends State<ChatHome> {
                     ListView.builder(
                       itemCount: displayList.length,
                       itemBuilder: (context, index) {
-                        return SingleChat(name: displayList.elementAt(index));
+                        return Column(
+                          children: [
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            SingleChat(name: displayList.elementAt(index)),
+                          ],
+                        );
                       },
                     ),
-                    Text('Friends'),
-                    Text('calls'),
+                    ListView.builder(
+                      itemCount: displayList.length,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          children: [
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            SingleChat(name: displayList.elementAt(index)),
+                          ],
+                        );
+                      },
+                    ),
+                    const ChatRoom(),
                   ],
                 ))
               ],
