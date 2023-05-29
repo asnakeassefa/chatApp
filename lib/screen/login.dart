@@ -1,5 +1,6 @@
 import 'package:chat/component/button.dart';
 import 'package:chat/component/userField.dart';
+import 'package:chat/screen/signup.dart';
 import 'package:flutter/material.dart';
 import '../component/backButton.dart';
 import '../component/loginAlternative.dart';
@@ -28,12 +29,12 @@ class _LoginState extends State<Login> {
               children: [
                 const SizedBox(height: 35),
                 //backbutton
-                Row(children: const [Back()]),
+                const Row(children: [Back()]),
                 // Header Text
                 const SizedBox(height: 40), //Text Description
-                Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     SizedBox(
                       width: 250,
                       child: Text(
@@ -98,13 +99,32 @@ class _LoginState extends State<Login> {
                 GestureDetector(
                   onTap: () => {},
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: const [
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(0, 10, 10, 0),
-                        child: Text(
-                          "Forget password",
-                          style: TextStyle(color: Colors.purple),
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      GestureDetector(
+                        onTap: () => {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignUp()),
+                          )
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.fromLTRB(10, 10,0, 0),
+                          child: Text(
+                            "signup",
+                            style: TextStyle(color: Colors.purple),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () => {},
+                        child: const Padding(
+                          padding: EdgeInsets.fromLTRB(0, 10, 10, 0),
+                          child: Text(
+                            "Forget password",
+                            style: TextStyle(color: Colors.purple),
+                          ),
                         ),
                       ),
                     ],
