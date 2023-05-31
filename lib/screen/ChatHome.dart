@@ -29,7 +29,6 @@ class _ChatHomeState extends State<ChatHome> {
   @override
   Widget build(BuildContext context) {
     void newList(String value) {
-      print(value);
       setState(
         () {
           displayList = users
@@ -96,7 +95,21 @@ class _ChatHomeState extends State<ChatHome> {
                         );
                       },
                     ),
-                    const ChatRoom(),
+                    
+                    ListView.builder(
+                      itemCount: displayList.length,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          children: [
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            SingleChat(name: displayList.elementAt(index)),
+                          ],
+                        );
+                      },
+                    ),
+                    
                   ],
                 ))
               ],

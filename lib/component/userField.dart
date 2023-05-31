@@ -5,7 +5,8 @@ class UserFormField extends StatelessWidget {
   final String hintText;
   final bool obscure;
   final String lableText;
-  const UserFormField({super.key,required this.controller, required this.hintText, required this.obscure,required this.lableText});
+  final function;
+  const UserFormField({super.key,required this.controller, required this.hintText, required this.obscure,required this.lableText, required this.function});
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,7 @@ class UserFormField extends StatelessWidget {
         }
         return null;
       },
+      onSaved: function,
       decoration: InputDecoration(
         // labelText: lableText,
         // hintText:hintText,

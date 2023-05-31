@@ -17,6 +17,29 @@ class _SignUpState extends State<SignUp> {
   final passwordController = TextEditingController();
   final confirmController = TextEditingController();
 
+  String username = "";
+  String password = "";
+  String email = "";
+  String confirmPass ="";
+  void getUsername(String name){
+    username = name;
+    print(username);
+  }
+
+  void getPassword(String pass){
+    password = pass;
+    print(password);
+  }
+  void getEmail(String userEmail){
+    email = userEmail;
+    print(email);
+  }
+
+  void getConpass(String Conpass){
+    confirmPass = Conpass;
+  }
+
+
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -56,6 +79,7 @@ class _SignUpState extends State<SignUp> {
                     obscure: false,
                     lableText: "username",
                     controller: userController,
+                    function: getUsername,
                   ),
                   const SizedBox(height: 20),
                   const Padding(
@@ -73,6 +97,7 @@ class _SignUpState extends State<SignUp> {
                     obscure: false,
                     lableText: "email",
                     controller: emailController,
+                    function: getEmail,
                   ),
                   const SizedBox(height: 20),
                   const Padding(
@@ -90,6 +115,7 @@ class _SignUpState extends State<SignUp> {
                     obscure: true,
                     lableText: "password",
                     controller: passwordController,
+                    function:getPassword,
                   ),
                   const SizedBox(height: 20),
                   const Padding(
@@ -107,6 +133,7 @@ class _SignUpState extends State<SignUp> {
                     obscure: true,
                     lableText: "confirm password",
                     controller: confirmController,
+                    function: getConpass,
                   ),
                   const SizedBox(height: 20),
                   Button(

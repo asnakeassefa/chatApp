@@ -17,6 +17,20 @@ class _LoginState extends State<Login> {
   final userController = TextEditingController();
   final passwordController = TextEditingController();
 
+  String username = "";
+  String password= "";
+
+  void getUsername(String name){
+    username = name;
+    print(username);
+  }
+
+  void getPassword(String pass){
+    password = pass;
+    print(password);
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,6 +88,7 @@ class _LoginState extends State<Login> {
                   obscure: false,
                   controller: userController,
                   lableText: "username",
+                  function: getUsername,
                 ),
 
                 //password TextField
@@ -93,6 +108,7 @@ class _LoginState extends State<Login> {
                   obscure: true,
                   controller: passwordController,
                   lableText: "password",
+                  function: getPassword,
                 ),
 
                 // forget password
@@ -132,6 +148,7 @@ class _LoginState extends State<Login> {
                 ),
                 // Login button
                 const SizedBox(height: 40),
+                // login button
                 Button(
                     todo: () => {
                           Navigator.push(
@@ -144,8 +161,8 @@ class _LoginState extends State<Login> {
                     child: "Login"),
                 const SizedBox(height: 40),
                 // other alternatives
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     Expanded(
                       child: Divider(
                         thickness: 0.5,
